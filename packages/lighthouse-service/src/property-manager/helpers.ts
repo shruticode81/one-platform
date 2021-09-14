@@ -3,7 +3,7 @@ import { PropertyModel } from "./schema";
 
 export const getUserProfile = async (
   rhUUID: string
-): Promise<PropertyUserProfileType> => {
+): Promise<UserProfileType> => {
   const userQuery = `query GetUsers{
       getUsersBy(rhatUUID:"${rhUUID}") {
           cn
