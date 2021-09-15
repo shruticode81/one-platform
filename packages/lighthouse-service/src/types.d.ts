@@ -2,36 +2,45 @@ declare module "*.graphql";
 declare module "*.json";
 
 type LighthouseType = {
-    sites: string;
-    serverBaseUrl: string;
-    currentBranch: string;
-    authorName: string;
-    authorEmail: string;
-    buildToken: string;
-    commitMessage: string;
-    preset: string;
+  sites: string;
+  serverBaseUrl: string;
+  currentBranch: string;
+  authorName: string;
+  authorEmail: string;
+  buildToken: string;
+  commitMessage: string;
+  preset: string;
 };
 
 type LighthouseScoreType = {
-    performance: string;
-    accessibility: string;
-    bestPractices: string;
-    seo: string;
-    pwa: string;
+  performance: number;
+  accessibility: number;
+  bestPractices: number;
+  seo: number;
+  pwa: number;
 };
 
 type LighthouseProjectType = {
-    id: string;
-    name: string;
-    slug: string;
-    externalUrl: string;
-    token: string;
-    baseBranch: string;
-    createdAt: string;
-    updatedAt: string;
+  id: string;
+  name: string;
+  slug: string;
+  externalUrl: string;
+  token: string;
+  baseBranch: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
-type PropertyUserProfileType = {
+type LighthouseBuildType = {
+  id: string;
+  projectId: string;
+  branch: string;
+  runAt: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+type UserProfileType = {
   cn: string;
   uid: string;
   rhatUUID: string;
@@ -51,8 +60,19 @@ type PropertyType = {
   description: string;
   projectId: string;
   apps: AppType[];
-  createdBy: string | PropertyUserProfileType;
+  createdBy: string | UserProfileType;
   createdOn: string;
   updatedOn: string;
-  updatedBy: string | PropertyUserProfileType;
+  updatedBy: string | UserProfileType;
+};
+
+type LHSpaConfigType = {
+  _id?: any;
+  projectId: string;
+  branch: string;
+  appId: string;
+  createdBy: string | UserProfileType | {};
+  createdOn: string;
+  updatedOn: string;
+  updatedBy: string | UserProfileType | {};
 };

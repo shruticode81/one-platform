@@ -1,14 +1,25 @@
-type Properties = {
-  name: string;
+type LHProject = {
   id: string;
-  projectId: string;
-  apps: PropertyApps[];
+  name: string;
+  slug: string;
+  externalUrl: string;
+  token: string;
+  baseBranch: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
-type PropertyApps = {
+type Pagination<T extends unknown> = {
+  count: number;
+  rows: T;
+};
+
+type ProjectBranch = {
   id: string;
-  name: string;
   branch: string;
+  projectId: string;
+  updatedAt: string;
+  score: Score;
 };
 
 type Score = {
@@ -19,10 +30,23 @@ type Score = {
   performance: number;
 };
 
-type PropertyBuilds = {
-  id: string;
-  projectId: string;
-  score: Score[];
+type ScoreTimelineChart = {
+  data: {
+    name: string;
+    series: ChartDataType[];
+  }[];
+};
+
+type ChartDataType = {
+  name: string;
+  value: number;
+};
+
+type Card = {
+  data: {
+    updatedAt: string;
+  };
+  scores: CardScore[];
 };
 
 type CardScore = {

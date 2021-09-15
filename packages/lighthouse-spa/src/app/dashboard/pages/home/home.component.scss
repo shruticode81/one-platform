@@ -4,7 +4,7 @@ a {
 }
 
 .loading-container {
-  min-height: 40vh;
+  min-height: 25vh;
 }
 
 .lighthouse-search {
@@ -13,4 +13,28 @@ a {
   border: 0;
   color: #3c3f42;
   outline: none;
+}
+
+.step-dot {
+  background-color: #fff;
+  border-radius: 999em;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  line-height: 1;
+  font-size: 30px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+
+  span {
+    position: absolute;
+    left: 0;
+    top: 65%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: -22px;
+    color: #000;
+  }
 }
